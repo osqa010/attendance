@@ -1,85 +1,111 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>اختبار أحكام النون الساكنة والتنوين</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@500;700;900&display=swap">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>اختبار مراجعة أحكام النون الساكنة والتنوين</title>
 <style>
-:root{--bg:#fbf6e9;--card:#fff;--tx:#1f2a24;--g:#0f4c3a;--gd:#b8923a;--ok:#2e7d32;--okb:#e5f4e6;--no:#b3261e;--nob:#fde8e6;--ln:#e3d3a8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10201a;--card:#182b23;--tx:#f1ecdd;--g:#2f8f70;--gd:#d9b765;--okb:#1d3a22;--nob:#4a2220;--ln:#3b4d43}}
-:root[data-theme="dark"]{--bg:#10201a;--card:#182b23;--tx:#f1ecdd;--g:#2f8f70;--gd:#d9b765;--okb:#1d3a22;--nob:#4a2220;--ln:#3b4d43}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
+:root{--bg:#f4f7f5;--card:#fff;--tx:#1b2a22;--ac:#1f7a4d;--mut:#5d6b63;--bd:#d5e0d9;--ok:#1f7a4d;--no:#b3261e}
+@media(prefers-color-scheme:dark){:root{--bg:#121a16;--card:#1b2620;--tx:#e8f0eb;--ac:#4cc38a;--mut:#9fb0a6;--bd:#2e3d35;--ok:#4cc38a;--no:#ff8a80}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--tx);font:500 21px/1.8 Cairo,'DejaVu Sans',sans-serif}
-.w{max-width:720px;margin:0 auto;padding:18px 16px 40px}
-header{background:var(--g);color:#fff;border-radius:18px;padding:16px 20px;text-align:center}
-header h1{margin:0;font-size:28px}header small{color:#f3deaa;font-size:17px}
-.bar{height:12px;background:var(--ln);border-radius:9px;margin:16px 0 6px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--gd);transition:width .3s}
-.cnt{display:flex;justify-content:space-between;font-size:17px;opacity:.85}
-.card{background:var(--card);border:2px solid var(--ln);border-radius:20px;padding:20px;margin-top:14px}
-.q{font-size:25px;font-weight:700;line-height:1.7;margin:0 0 14px}
-.w2{font:700 32px/1.6 Amiri,'FreeSerif',serif;color:var(--gd)}
-.o{display:block;width:100%;text-align:right;font:inherit;color:inherit;background:var(--bg);border:2px solid var(--ln);border-radius:14px;padding:12px 16px;margin:10px 0;cursor:pointer;min-height:56px}
-.o:hover:not([disabled]){border-color:var(--gd)}
-.o.ok{background:var(--okb);border-color:var(--ok)}.o.no{background:var(--nob);border-color:var(--no)}
-.ex{margin-top:12px;padding:12px 16px;border-radius:14px;background:var(--okb);font-size:19px}
-.ex.bad{background:var(--nob)}
-.btn{font:700 22px Cairo,sans-serif;background:var(--g);color:#fff;border:0;border-radius:14px;padding:12px 28px;margin-top:16px;cursor:pointer}
-.res{text-align:center}.sc{font-size:64px;font-weight:900;color:var(--gd);line-height:1.2}
-.rv{text-align:right;margin-top:14px;font-size:19px}.rv div{border-top:1px solid var(--ln);padding:8px 0}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--tx);line-height:1.8}
+.wrap{max-width:640px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:20px;margin-bottom:14px}
+h1{font-size:1.4rem;color:var(--ac);text-align:center;margin:8px 0}
+.sup{text-align:center;color:var(--mut);margin-bottom:16px}
+.pledge{display:flex;gap:10px;align-items:flex-start;font-size:1.05rem;cursor:pointer}
+.pledge input{width:24px;height:24px;margin-top:4px;accent-color:var(--ac)}
+button{width:100%;padding:12px;border:0;border-radius:10px;background:var(--ac);color:#fff;font-size:1.05rem;cursor:pointer;margin-top:14px}
+button:disabled{opacity:.4;cursor:not-allowed}
+.q{font-weight:bold;margin-bottom:8px}
+.o{display:block;padding:8px 12px;border:1px solid var(--bd);border-radius:10px;margin:6px 0;cursor:pointer}
+.o input{margin-left:8px;accent-color:var(--ac)}
+.ok{border-color:var(--ok);background:rgba(31,122,77,.12)}
+.no{border-color:var(--no);background:rgba(179,38,30,.1)}
 .hide{display:none}
+.score{font-size:1.6rem;text-align:center;color:var(--ac);font-weight:bold}
 </style>
 </head>
 <body>
-<div class="w">
-<header><h1>اختبار أحكام النون الساكنة والتنوين</h1><small>الإظهار • الإدغام • الإقلاب • الإخفاء</small></header>
-<div id="start" class="card res">
-<p class="q">١٨ سؤالاً مع تصحيح فوري وشرح لكل إجابة</p>
-<button class="btn" id="go">ابدأ الاختبار</button>
+<div class="wrap">
+
+<div id="p1" class="card">
+  <h1>اختبار مراجعة أحكام النون الساكنة والتنوين</h1>
+  <div class="sup">إشراف المعلم: أ. عبدالعزيز الديني</div>
+  <label class="pledge">
+    <input type="checkbox" id="pl">
+    <span>أتعهد بالله أن أؤدي هذا الاختبار بنفسي، وأن لا أغش ولا أستعين بأحد أو بأي وسيلة.</span>
+  </label>
+  <button id="start" disabled>ابدأ الاختبار</button>
 </div>
-<div id="quiz" class="hide">
-<div class="bar"><i id="pb"></i></div>
-<div class="cnt"><span id="num"></span><span id="scr"></span></div>
-<div class="card"><p class="q" id="q"></p><div id="opts"></div><div id="ex" class="ex hide"></div><div style="text-align:center"><button class="btn hide" id="nx">التالي</button></div></div>
+
+<div id="p2" class="hide">
+  <form id="f"></form>
+  <button id="sub" type="button">إنهاء وعرض النتيجة</button>
+  <div id="res" class="card hide"></div>
 </div>
-<div id="end" class="card res hide"></div>
+
 </div>
 <script>
 var Q=[
-["عدد حروف الإظهار الحلقي:",["٤","٥","٦"],2,"ستة حروف: ء ه ع ح غ خ."],
-["أي الحروف الآتية من حروف الإظهار الحلقي؟",["ع","ب","ر"],0,"العين من حروف الحلق الستة."],
-["لِمَ سُمِّي الإظهار حلقياً؟",["لخروج حروفه من الحلق","لوجود غنة فيه","لإخفاء النون"],0,"لأن حروفه تخرج من الحلق."],
-["حروف الإدغام الستة مجموعة في كلمة:",["يرملون","ينمو","صفذا"],0,"«يرملون»: ي ر م ل و ن."],
-["حروف الإدغام بغنة:",["ي ن م و","ل ر","ء ه ع"],0,"تجمعها كلمة «يَنْمُو»."],
-["حرفا الإدغام بغير غنة:",["ل ر","م و","ن ي"],0,"اللام والراء فقط، ويسمى الإدغام الكامل."],
-["حكم «مِنْ يَقُولُ»:",["إظهار حلقي","إدغام بغنة","إقلاب","إخفاء"],1,"الياء من حروف الإدغام بغنة."],
-["حكم «مِنْ رَبِّهِمْ»:",["إدغام بغنة","إدغام بغير غنة","إخفاء","إقلاب"],1,"الراء من حروف الإدغام بغير غنة."],
-["في كلمة «الدُّنْيَا» الحكم هو:",["إدغام بغنة","إخفاء","إظهار","إقلاب"],2,"النون والياء في كلمة واحدة، فلا إدغام بل إظهار."],
-["حرف الإقلاب هو:",["ب","ف","م"],0,"الباء هي حرف الإقلاب الوحيد."],
-["حكم «مِنْ بَعْدِ»:",["إخفاء","إظهار حلقي","إقلاب","إدغام بغنة"],2,"النون الساكنة بعدها باء."],
-["علامة الإقلاب في المصحف: ميم صغيرة توضع فوق النون بدل علامة السكون.",["صح","خطأ"],0,"صحيح، وفي التنوين تُكتب حركة واحدة ومعها ميم صغيرة."],
-["رتّب خطوات النطق بالإقلاب:",["قلب ثم إخفاء ثم غنة","غنة ثم قلب ثم إخفاء","إخفاء ثم قلب ثم غنة"],0,"تُقلب النون ميماً، تُخفى الميم عند الباء، وتظهر الغنة بمقدار حركتين."],
-["عدد حروف الإخفاء:",["١٥","١٠","٦"],0,"خمسة عشر حرفاً، جمعها بيت «صِفْ ذَا ثَنَا كَمْ جَادَ شَخْصٌ قَدْ سَمَا…»."],
-["حكم «مِنْ قَبْلُ»:",["إدغام بغنة","إخفاء","إقلاب","إظهار حلقي"],1,"القاف من حروف الإخفاء."],
-["مقدار الغنة في الإخفاء:",["حركة واحدة","حركتان","ثلاث حركات"],1,"بمقدار حركتين."],
-["حكم «هُدًى لِلْمُتَّقِينَ»:",["إدغام بغنة","إدغام بغير غنة","إخفاء","إظهار حلقي"],1,"التنوين بعده لام، فهو إدغام بغير غنة."],
-["حكم «عَلِيمٌ حَكِيمٌ»:",["إظهار حلقي","إخفاء","إقلاب","إدغام بغنة"],0,"التنوين بعده حاء، وهي من حروف الحلق."]];
-var i=0,s=0,wr=[],$=function(x){return document.getElementById(x)};
-function sh(a){var b=a.slice();for(var k=b.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1));var t=b[k];b[k]=b[j];b[j]=t}return b}
-function show(){var q=Q[i];$("num").textContent="السؤال "+(i+1)+" من "+Q.length;$("scr").textContent="الدرجة: "+s;$("pb").style.width=(i/Q.length*100)+"%";
-$("q").textContent=q[0];$("ex").className="ex hide";$("nx").className="btn hide";
-var o=q[1].map(function(t,k){return{t:t,c:k===q[2]}});if(o.length>2)o=sh(o);
-$("opts").innerHTML="";o.forEach(function(x){var b=document.createElement("button");b.className="o";b.textContent=x.t;b.onclick=function(){pick(b,x.c,o)};$("opts").appendChild(b)})}
-function pick(b,c,o){var bs=$("opts").children;for(var k=0;k<bs.length;k++){bs[k].disabled=true;if(o[k].c)bs[k].className="o ok"}
-var q=Q[i];if(c){s++;$("scr").textContent="الدرجة: "+s}else{b.className="o no";wr.push(i)}
-$("ex").textContent=(c?"أحسنت! ":"الإجابة الصحيحة موضحة بالأخضر. ")+q[3];$("ex").className="ex"+(c?"":" bad");$("nx").textContent=i<Q.length-1?"التالي":"عرض النتيجة";$("nx").className="btn"}
-$("go").onclick=function(){$("start").className="card res hide";$("quiz").className="";i=0;s=0;wr=[];show()};
-$("nx").onclick=function(){i++;if(i<Q.length)show();else fin()};
-function fin(){$("quiz").className="hide";var p=Math.round(s/Q.length*100),m=p>=90?"ممتاز! ما شاء الله":p>=75?"جيد جداً، استمر":p>=50?"جيد، راجع الأخطاء":"راجع الدروس وأعد المحاولة";
-var h='<div class="sc">'+s+' / '+Q.length+'</div><p class="q">'+m+'</p>';
-if(wr.length){h+='<div class="rv"><b>أسئلة تحتاج مراجعة:</b>';wr.forEach(function(k){h+='<div>'+Q[k][0]+'<br><span style="color:var(--ok)">'+Q[k][1][Q[k][2]]+'</span> — '+Q[k][3]+'</div>'});h+='</div>'}
-h+='<button class="btn" onclick="location.reload()">إعادة الاختبار</button>';$("end").innerHTML=h;$("end").className="card res"}
+{q:"أي الأمثلة التالية فيها إدغام كامل (بلا غنة)؟",o:["مِن رَّبِّهِمْ","مَن يَقُولُ","مِن بَعْدِ","مَنْ آمَنَ"],a:0},
+{q:"أي الأمثلة التالية فيها إدغام ناقص (بغنة)؟",o:["مِن لَّدُنْهُ","مَن يَقُولُ","مِن رَّبِّهِمْ","مِن شَرِّ"],a:1},
+{q:"حرفا الإدغام الكامل هما:",o:["ي ن م و","ل ر","ب","ء هـ ع ح غ خ"],a:1},
+{q:"حروف الإدغام الناقص (بغنة) هي:",o:["ل ر","ب","ي ن م و","ت ث ج د"],a:2},
+{q:"ما حكم النون الساكنة في: مَنْ آمَنَ؟",o:["إظهار","إدغام","إقلاب","إخفاء"],a:0},
+{q:"ما حكم النون الساكنة في: مِنْ بَعْدِ؟",o:["إظهار","إدغام","إقلاب","إخفاء"],a:2},
+{q:"ما حكم النون الساكنة في: مَنْ كَانَ؟",o:["إظهار","إدغام","إقلاب","إخفاء"],a:3},
+{q:"ما حكم النون الساكنة في: مِن نَّارٍ؟",o:["إظهار","إدغام","إقلاب","إخفاء"],a:1},
+{q:"ما حكم التنوين في: عَلِيمٌ حَكِيمٌ؟",o:["إظهار","إدغام","إقلاب","إخفاء"],a:0},
+{q:"ما حكم التنوين في: سَمِيعٌ بَصِيرٌ؟",o:["إظهار","إدغام","إقلاب","إخفاء"],a:2},
+{q:"ما حكم التنوين في: جَنَّاتٍ تَجْرِي؟",o:["إظهار","إدغام","إقلاب","إخفاء"],a:3},
+{q:"ما حكم التنوين في: غَفُورٌ رَّحِيمٌ؟",o:["إظهار","إدغام","إقلاب","إخفاء"],a:1},
+{q:"كم عدد أحكام النون الساكنة والتنوين؟",o:["ثلاثة","أربعة","خمسة","ستة"],a:1},
+{q:"حروف الإظهار الحلقي هي:",o:["ء هـ ع ح غ خ","ي ن م و","ل ر","ب فقط"],a:0},
+{q:"الحرف الذي يأتي بعده الإقلاب هو:",o:["الميم","الباء","الواو","اللام"],a:1},
+{q:"عدد حروف الإخفاء:",o:["ستة","ستة حروف وحرفان","خمسة عشر حرفًا","حرف واحد"],a:2},
+{q:"مقدار الغنة في الإدغام الناقص والإخفاء والإقلاب:",o:["حركة واحدة","حركتان","أربع حركات","ست حركات"],a:1},
+{q:"كيف تُرسم النون الساكنة في المصحف عند الإظهار؟",o:["بسكون عليها","عارية من السكون","بشدّة","بميم صغيرة فوقها"],a:0},
+{q:"كيف يُرسم التنوين عند الإظهار في المصحف؟",o:["حركتان متراكبتان","حركتان متتابعتان","حركة واحدة","ميم صغيرة"],a:0},
+{q:"كيف يُرسم التنوين عند الإدغام والإخفاء في المصحف؟",o:["حركتان متراكبتان","حركتان متتابعتان","بسكون","بشدّة"],a:1},
+{q:"كيف تُرسم النون الساكنة عند الإدغام في المصحف؟",o:["بسكون عليها","عارية من السكون","بميم صغيرة","بهمزة"],a:1},
+{q:"كيف يُرسم الحرف المدغم بعد النون في الإدغام الكامل (مِن رَّبِّهِمْ)؟",o:["مشدّد","بسكون","بلا شدّة","بميم صغيرة"],a:0},
+{q:"كيف يُرسم الحرف المدغم بعد النون في الإدغام الناقص (مَن يَقُولُ)؟",o:["مشدّد","من غير تشديد","بسكون","بميم صغيرة"],a:1},
+{q:"ماذا يوضع فوق النون أو التنوين عند الإقلاب في المصحف؟",o:["سكون","شدّة","ميم صغيرة","همزة"],a:2},
+{q:"كيف تُرسم النون الساكنة عند الإخفاء في المصحف؟",o:["بسكون عليها","عارية من السكون","بميم صغيرة","بشدّة"],a:1},
+{q:"التنوين هو:",o:["نون متحركة تثبت وصلًا ووقفًا","نون ساكنة زائدة تلحق آخر الاسم لفظًا لا خطًا ووقفًا","حرف يلحق أول الفعل","ميم ساكنة في آخر الاسم"],a:1},
+{q:"ما الفرق بين النون الساكنة والتنوين؟",o:["النون الساكنة تكون في الاسم والفعل والحرف، والتنوين في الاسم فقط","التنوين يكون في الفعل فقط","لا فرق بينهما","النون الساكنة في آخر الكلمة فقط"],a:0},
+{q:"ما حكم النون الساكنة في: مِن وَالٍ؟",o:["إدغام كامل (بلا غنة)","إدغام ناقص (بغنة)","إقلاب","إخفاء"],a:1},
+{q:"ما حكم النون الساكنة في: مِن لَّدُنْهُ؟",o:["إدغام كامل (بلا غنة)","إدغام ناقص (بغنة)","إظهار","إخفاء"],a:0}
+];
+var f=document.getElementById("f");
+Q.forEach(function(x,i){
+  var d=document.createElement("div");d.className="card";d.id="q"+i;
+  var h='<div class="q">'+(i+1)+') '+x.q+'</div>';
+  x.o.forEach(function(t,j){h+='<label class="o" id="o'+i+'_'+j+'"><input type="radio" name="q'+i+'" value="'+j+'">'+t+'</label>';});
+  d.innerHTML=h;f.appendChild(d);
+});
+var pl=document.getElementById("pl"),st=document.getElementById("start");
+pl.onchange=function(){st.disabled=!pl.checked;};
+st.onclick=function(){
+  document.getElementById("p1").classList.add("hide");
+  document.getElementById("p2").classList.remove("hide");
+  window.scrollTo(0,0);
+};
+document.getElementById("sub").onclick=function(){
+  var s=0;
+  Q.forEach(function(x,i){
+    var c=document.querySelector('input[name="q'+i+'"]:checked');
+    if(c&&+c.value===x.a)s++;
+    document.getElementById("o"+i+"_"+x.a).classList.add("ok");
+    if(c&&+c.value!==x.a)document.getElementById("o"+i+"_"+c.value).classList.add("no");
+  });
+  var r=document.getElementById("res");
+  r.className="card";
+  r.innerHTML='<div class="score">النتيجة: '+s+' من '+Q.length+'</div>';
+  this.disabled=true;
+  r.scrollIntoView({behavior:"smooth"});
+};
 </script>
 </body>
 </html>
